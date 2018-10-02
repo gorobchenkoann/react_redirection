@@ -18,6 +18,11 @@
 .link {
     text-decoration: none;
     color: #000;
+
+    &:hover,
+    &:focus {
+        color: lighten(#000, 10%);
+    }
 }
 
 .login {
