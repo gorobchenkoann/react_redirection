@@ -1,6 +1,7 @@
 const path = require('path');
 const sass = require('sass');
 const fibers = require('fibers');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: __dirname + '/src/index.js',
@@ -8,8 +9,14 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
     },
+    plugins: [
+        new HtmlWebpackPlugin({template: 'src/index.html'})
+    ],
     resolve: {
-        modules: ['node_modules', path.resolve(__dirname, 'src')], 
+        modules: ['node_modules', __dirname], 
+        alias: {
+            Components: path.resolve(__dirname, 'src/Components')
+        },
         extensions: ['.js', '.jsx', '.scss', '.css', '*']
     },
     module: {
@@ -48,8 +55,8 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-        publicPath: '/dist/',
-        contentBase: path.resolve(__dirname, ''),
+        publicPath: '/',
+        contentBase: path.resolve(__dirname, 'src'),
         watchContentBase: true,
     }
 };
