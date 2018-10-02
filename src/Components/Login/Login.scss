@@ -3,7 +3,35 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 20px 40px;
+    padding: 20px 60px;
     border: 1px solid #d4d4d4;
     border-radius: 5px;
+}
+
+input[name=login],
+input[name=password] {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #d4d4d4;
+}
+
+.button {
+    padding: 15px 0;
+    font-size: 18px;
+    color: #fff;
+    background-color: #91cc6e;
+    border: none;
+    border-radius: 5px;
+
+    &:hover,
+    &:focus {
+        background-color: darken(#91cc6e, 10%);
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: darken(#91cc6e, 20%);
+    }
 }

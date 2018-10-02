@@ -29,15 +29,13 @@ export class Login extends React.Component {
         if (!isUserLoggedIn) {
             return (
                 <form className={styles.form} onSubmit={(e) => this.handleSubmit(e)}>
-                    <label>
-                        Login:
-                        <input type="text" name='login'/>
-                    </label>
-                    <label>
-                        Password:
-                        <input type="text" name='password'/>
-                    </label>
-                    <input type="submit" value="Войти" />
+                    <label for='login'>Login:</label>                        
+                    <input type='text' name='login' id='login'/>
+                    
+                    <label for='password'>Password: </label>
+                    <input type='password' name='password' id='password'/>
+
+                    <input type='submit' className={styles.button} value='Войти' />
                 </form>
             )
         } else {
