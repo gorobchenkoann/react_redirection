@@ -1,6 +1,8 @@
 .header {
     display: flex;
     padding: 20px 0;
+
+    border-bottom: 1px solid #d4d4d4;
 }
 
 .menu {
@@ -22,4 +24,20 @@
 
 .login {
     margin-left: auto;
+}
+
+.loginLink {    
+    padding: 10px 20px;
+
+    color: #fff;
+    background-color: #91cc6e;
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        background-color: darken(#91cc6e, 10%);
+        cursor: pointer;
+    }
 }

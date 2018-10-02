@@ -8,7 +8,7 @@ export class Header extends React.Component {
         const isLoggedIn = localStorage.getItem('admin');
         const action = isLoggedIn ? 'Выйти' : 'Войти';
         
-        return <Link to='/login'>{action}</Link>
+        return <Link to='/login' className={styles.loginLink}>{action}</Link>
     }
 
     render() {
