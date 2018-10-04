@@ -27,8 +27,6 @@ export class Login extends React.Component {
       
     render() {
         const isUserLoggedIn = localStorage.getItem('currentUser');
-        console.log(isUserLoggedIn);
-        console.log(localStorage);
         if (!isUserLoggedIn) {
             return (
                 <form className={styles.form} onSubmit={(e) => this.handleSubmit(e)}>

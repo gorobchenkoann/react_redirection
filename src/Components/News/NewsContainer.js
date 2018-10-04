@@ -61,7 +61,7 @@ export class NewsContainer extends React.Component {
     }
 
     render() {
-        return <NewsList news={this.state.news} key={this.state.news.id} />
+        return <NewsList news={this.state.news} />
     }
 }
 
