@@ -1,6 +1,11 @@
 .header {
     display: flex;
     padding: 20px 0;
+    
+    @media (max-width: 720px) {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
 }
 
 .menu {
@@ -8,11 +13,24 @@
     justify-content: space-between;
     padding: 0;
     margin: 0;
+
+    @media (max-width: 720px) {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 .item {
     list-style: none;
     margin-right: 40px;
+
+    @media (max-width: 720px) {
+        padding: 10px 0;
+        margin-right: 0;
+        text-align: center;
+        border-bottom: 1px solid #d4d4d4;
+    }
 }
 
 .link {
@@ -27,6 +45,10 @@
 
 .login {
     margin-left: auto;
+
+    @media (max-width: 720px) {
+        margin: 0 auto;
+    }
 }
 
 .loginLink {    
