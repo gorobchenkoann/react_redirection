@@ -5,7 +5,7 @@ import styles from './Header.scss';
 
 export class Header extends React.Component {
     renderLink() {
-        const isLoggedIn = localStorage.getItem('admin');
+        const isLoggedIn = localStorage.getItem('currentUser');
         const action = isLoggedIn ? 'Выйти' : 'Войти';
         
         return <Link to='/login' className={styles.loginLink}>{action}</Link>

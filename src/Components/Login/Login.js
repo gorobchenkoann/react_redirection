@@ -3,12 +3,12 @@ import React from 'react';
 import styles from './Login.scss';
 
 export class Login extends React.Component {
-    logIn() {        
-        localStorage.setItem('admin', 'password');
+    logIn(login, password) {   
+        localStorage.setItem('currentUser', JSON.stringify({name: login, password: password}));
         this.props.history.push('/profile');
     }
     logOut() {
-        localStorage.removeItem('admin')
+        localStorage.removeItem('currentUser')
         this.props.history.push('/');
     }
     
@@ -16,16 +16,19 @@ export class Login extends React.Component {
         e.preventDefault();
         const login = e.target.querySelector('[name="login"]').value;
         const password = e.target.querySelector('[name="password"]').value;
+        
 
         if (login === 'admin' && password === '12345') {
-            this.logIn();
+            this.logIn(login, password);
         } else {
             e.target.reset();
         }
     }
       
     render() {
-        const isUserLoggedIn = localStorage.getItem('admin');
+        const isUserLoggedIn = localStorage.getItem('currentUser');
+        console.log(isUserLoggedIn);
+        console.log(localStorage);
         if (!isUserLoggedIn) {
             return (
                 <form className={styles.form} onSubmit={(e) => this.handleSubmit(e)}>
@@ -43,8 +46,7 @@ export class Login extends React.Component {
             return (
                 <React.Fragment>
                     {this.logOut()}
-                </React.Fragment>  
-                // <button onClick={() => this.logOut()}>Выйти</button>                
+                </React.Fragment>            
             )  
         }
                     
