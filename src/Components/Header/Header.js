@@ -1,14 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import styles from './Header.scss';
 
 export class Header extends React.Component {
+    logout() {
+        localStorage.removeItem('currentUser');
+    }
+
     renderLink() {
         const isLoggedIn = localStorage.getItem('currentUser');
-        const action = isLoggedIn ? 'Выйти' : 'Войти';
-        
-        return <Link to='/login' className={styles.loginLink}>{action}</Link>
+
+        if (!isLoggedIn) {
+            return <Link to='/login' className={styles.loginLink}>Войти</Link>
+        } else {
+            return <a href='#' className={styles.loginLink} onClick={this.logout}>Выйти</a>
+        }        
     }
 
     render() {
@@ -25,7 +32,9 @@ export class Header extends React.Component {
                         <Link to="/profile" className={styles.link}>Профиль</Link>
                     </li>              
                 </ul>
-                <div className={styles.login}>{this.renderLink()}</div>                
+                <div className={styles.login}>
+                    {this.renderLink()}
+                </div>                
             </div>
         )
     }
