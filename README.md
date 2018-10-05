@@ -1,3 +1,3 @@
 # react_redirection
 
-Basic react redirection.
+https://react-redirection.netlify.com/
