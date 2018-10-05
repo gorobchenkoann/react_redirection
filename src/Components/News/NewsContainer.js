@@ -14,6 +14,13 @@ export class NewsContainer extends React.Component {
         this.setState({ news })
     }
 
+    // getNewsAPI() {
+    //     let news = '';
+    //     fetch('https://newsapi.org/v2/top-headlines?country=ru&apiKey=da4b83136b0c4660a6f357d5aa5caad1')
+    //     .then(res => res.json())
+    //     .then(result => {console.log(result)})
+    // }
+
     getNews() {
         const news = [
             {
